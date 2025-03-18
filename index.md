@@ -1,6 +1,9 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: home
 ---
+
+<a href="https://github.com/willmcpherson2"><img src="/assets/images/github.png" width="32" /></a>
+<a href="https://soundcloud.com/cereal7"><img src="/assets/images/soundcloud.png" width="32" /></a>
+<a href="https://www.linkedin.com/in/willmcpherson2/"><img src="/assets/images/linkedin.png" width="32" /></a>
+
+<br>

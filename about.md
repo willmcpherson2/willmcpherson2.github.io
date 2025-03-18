@@ -1,18 +1,33 @@
 ---
 layout: page
 title: About
-permalink: /about/
+permalink: /about
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+<div align="center"><img src="/assets/images/about.png" width="400" /></div>
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+<br>
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+I'm Will McPherson. I'm a professional software engineer and amateur musician.
 
-
-[jekyll-organization]: https://github.com/jekyll
+I'm interested in:
+- Computer science
+- Programming languages
+- Compilers
+- Type theory
+- AI safety
+- Video game development
+- Systems programming
+- Linux
+- NixOS
+- Mathematics
+- Physics
+- Linguistics
+- History
+- Culture
+- English
+- Norwegian
+- Television
+- Comedy
+- Electronic music
+- Hip hop
