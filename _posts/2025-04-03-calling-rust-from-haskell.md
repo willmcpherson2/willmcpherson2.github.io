@@ -5,7 +5,7 @@ title: "Calling Rust from Haskell"
 
 | This setup is available as a project template: [hsrs](https://github.com/willmcpherson2/hsrs)
 
-Haskell is a great, but not low-level.
+Haskell is great, but not low-level.
 Fortunately, Haskell has a low-overhead FFI which allows you to call C.
 Of course, it doesn't have to be C.
 Any C ABI will do.
