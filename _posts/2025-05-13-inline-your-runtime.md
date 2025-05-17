@@ -4,6 +4,11 @@ title: "Inline Your Runtime"
 published: false
 ---
 
+* toc
+{:toc}
+
+---
+
 | [github.com/willmcpherson2/inline-your-runtime](https://github.com/willmcpherson2/inline-your-runtime)
 
 > Inlining is the mother of all optimisations

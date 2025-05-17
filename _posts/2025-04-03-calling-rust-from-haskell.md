@@ -3,6 +3,11 @@ layout: post
 title: "Calling Rust from Haskell"
 ---
 
+* toc
+{:toc}
+
+---
+
 | This setup is available as a project template: [hsrs](https://github.com/willmcpherson2/hsrs)
 
 Haskell is great, but not low-level.

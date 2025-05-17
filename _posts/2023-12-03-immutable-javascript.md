@@ -3,6 +3,11 @@ layout: post
 title: "Immutable JavaScript or: How I Learned to Stop Worrying and Love Shallow Copies"
 ---
 
+* toc
+{:toc}
+
+---
+
 Objects are the best and worst part of JavaScript.
 
 The best:

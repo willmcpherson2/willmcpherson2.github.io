@@ -4,6 +4,11 @@ title: "The Equation Calculus"
 published: false
 ---
 
+* toc
+{:toc}
+
+---
+
 | [github.com/willmcpherson2/equation](https://github.com/willmcpherson2/equation)
 
 I love programming language design.

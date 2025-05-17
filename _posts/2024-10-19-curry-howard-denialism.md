@@ -3,6 +3,11 @@ layout: post
 title: "Curry-Howard Denialism"
 ---
 
+* toc
+{:toc}
+
+---
+
 # Introduction
 
 The Curry-Howard correspondence is the observation that writing a computer program is equivalent to writing a mathematical proof.

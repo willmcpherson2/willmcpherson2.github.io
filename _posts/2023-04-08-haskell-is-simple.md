@@ -3,6 +3,11 @@ layout: post
 title: "Haskell is simple"
 ---
 
+* toc
+{:toc}
+
+---
+
 Haskell is a large language – it has a complex syntax, an expressive type system and a long list of extensions. But I would argue that it's far simpler than almost all other popular programming languages.
 
 # Primitive Power
