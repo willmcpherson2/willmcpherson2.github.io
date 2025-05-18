@@ -34,10 +34,10 @@ Ok, so how do we actually use this technique?
 The most straightforward solution is to implement the programming language as an executable compiler and a runtime library.
 The compiler generates a binary which is then linked against the runtime library.
 
-This is a fine solution, and I actually recommend it over the monstrosity that I'll be describing in this post.
+This is a fine solution, and I actually recommend it over some of the hacks that I'll be describing in this post.
 However it's worth understanding some of the downsides of linking your runtime.
 
-By separately compiling the executable from its runtime, we miss out on a lot of the optimisations available in LLVM.
+By separately compiling the executable and the runtime, we miss out on a lot of the optimisations available in LLVM.
 While the executable and the runtime can be optimised separately, information is lost in the boundary.
 
 This is particularly problematic because this is the *runtime of a programming language*.
@@ -51,8 +51,8 @@ LTO is a bit confusing and I don't understand it.
 But basically, instead of linking object files, you tell the compiler (e.g. Clang) to emit something it can actually optimise (e.g. LLVM bitcode).
 This enables whole-program optimisation.
 
-But how do we do that with our executable and runtime?
-Well we could compile our runtime to LLVM bitcode ahead of time, compile the input program to LLVM bitcode and then link them.
+But how do we do that with the generated code and the runtime?
+Well we could compile our runtime to LLVM bitcode ahead of time, generate our code as LLVM bitcode and then link them.
 For example if `rts.bc` is our runtime library and `output.bc` is our generated code:
 
 ```
@@ -62,9 +62,6 @@ $ llc --filetype=obj main.bc -o main.o
 $ cc main.o -o main
 ```
 
-Our compiler calls some LLVM APIs to link the bitcode, optimise it and compile it to an object file.
-Then we invoke the system compiler to link to an executable.
-
 Or in the case of JIT compiling:
 
 ```
@@ -73,6 +70,9 @@ $ opt main.bc -o main.bc
 $ lli main.bc
 ```
 
+As you can see, this is pretty straightforward.
+Let's see how we can actually generate the bitcode, and how we can use this LLVM functionality through the API.
+
 # Implementation
 
 To properly implement this in a compiler, we can do the following:
@@ -80,8 +80,9 @@ To properly implement this in a compiler, we can do the following:
 - Build a runtime library
   - Use a Rust toolchain to compile the library to LLVM bitcode
 - Build a compiler
-  - Include the runtime system bitcode in the compiler
+  - Include the runtime library in the compiler
   - Link the compiler to the same LLVM version as the runtime library
+  - Write some code to call our runtime API
   - Use the Rust toolchain to compile the compiler to a native executable
 
 ## Toolchain
@@ -140,7 +141,7 @@ First we need a development environment which provides LLVM libraries for our co
 
 I chose LLVM 18 because it's supported by the [Inkwell crate](https://github.com/TheDan64/inkwell) which provides high-level Rust bindings to LLVM.
 
-Now we can verify that our LLVM versions match:
+We should verify that our LLVM versions match:
 
 ```
 $ llvm-config --version
@@ -285,7 +286,7 @@ running 0 tests
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 ```
 
-Now we can build the runtime library for consumption in the compiler.
+Now we can compile the runtime library for consumption in the compiler.
 
 [`Makefile`](https://github.com/willmcpherson2/inline-your-runtime/blob/3a27713dddb4cebad4f6cf9fd9b0dbffda49419d/Makefile)
 
@@ -358,7 +359,7 @@ $ llvm-nm target/rts.bc
 ```
 
 Perfect - the only undefined symbols are the C functions we're calling.
-Note that this is for the `release` profile - the `dev` profile will create a much larger module.
+Note that this is for the `release` profile and the `dev` profile will create a much larger module.
 
 ## Compiler
 
@@ -460,6 +461,9 @@ $ echo $?
 
 Success! We got our `1 + 2 + 3`.
 
+What's great about the JIT compiler is that it basically doesn't require anything from the environment.
+No opening files, no invoking a C compiler, just direct execution.
+
 Let's compile:
 
 ```
@@ -469,3 +473,59 @@ $ ./main
 $ echo $?
 6
 ```
+
+We can even make a static binary if we want:
+
+```
+$ gcc -static main.o -o main -L $(nix path-info nixpkgs#glibc.static)/lib
+$ ldd main
+        not a dynamic executable
+```
+
+# Exercises
+
+## Build the runtime on `std`
+
+I used `no_std` to simplify the build.
+But there shouldn't be anything stopping us from linking to `std`.
+
+## Use a better allocator
+
+The allocator I'm using in [`rts/src/lib.rs`](https://github.com/willmcpherson2/inline-your-runtime/blob/3a27713dddb4cebad4f6cf9fd9b0dbffda49419d/rts/src/lib.rs) isn't very efficient.
+We need to also implement [`alloc_zeroed`](https://doc.rust-lang.org/std/alloc/trait.GlobalAlloc.html#method.alloc_zeroed) and [`realloc`](https://doc.rust-lang.org/std/alloc/trait.GlobalAlloc.html#method.realloc). Better yet, integrate a modern allocator like [mimalloc](https://github.com/purpleprotocol/mimalloc_rust) or [rpmalloc](https://github.com/EmbarkStudios/rpmalloc-rs).
+
+## Target machine optimisations
+
+For some reason, using anything other than `OptimizationLevel::None` for the `TargetMachine` causes memory errors when compiling to an object file.
+
+```rust
+let options = TargetMachineOptions::new().set_level(OptimizationLevel::Aggressive);
+```
+
+```
+$ valgrind ./target/debug/compiler 
+Conditional jump or move depends on uninitialised value(s)
+   at 0x34A0BA2: llvm::APInt::setBits(unsigned int, unsigned int) (in /home/will/Desktop/inline-your-runtime/target/debug/compiler)
+   by 0x6BB0684: computeKnownBits(llvm::Value const*, llvm::APInt const&, llvm::KnownBits&, unsigned int, llvm::SimplifyQuery const&) (in /home/will/Desktop/inline-your-runtime/target/debug/compiler)
+   by 0x6BBAADF: llvm::computeKnownBits(llvm::Value const*, llvm::KnownBits&, llvm::DataLayout const&, unsigned int, llvm::AssumptionCache*, llvm::Instruction const*, llvm::DominatorTree const*, bool) (in /home/will/Desktop/inline-your-runtime/target/debug/compiler)
+   by 0x5AADDA2: llvm::SelectionDAG::InferPtrAlign(llvm::SDValue) const (in /home/will/Desktop/inline-your-runtime/target/debug/compiler)
+   by 0x599C8DF: (anonymous namespace)::DAGCombiner::visitLOAD(llvm::SDNode*) (in /home/will/Desktop/inline-your-runtime/target/debug/compiler)
+   by 0x59E8E14: (anonymous namespace)::DAGCombiner::combine(llvm::SDNode*) (in /home/will/Desktop/inline-your-runtime/target/debug/compiler)
+   by 0x59EA68C: llvm::SelectionDAG::Combine(llvm::CombineLevel, llvm::AAResults*, llvm::CodeGenOptLevel) (in /home/will/Desktop/inline-your-runtime/target/debug/compiler)
+   by 0x5AFE320: llvm::SelectionDAGISel::CodeGenAndEmitDAG() (in /home/will/Desktop/inline-your-runtime/target/debug/compiler)
+   by 0x5B00EE6: llvm::SelectionDAGISel::SelectAllBasicBlocks(llvm::Function const&) (in /home/will/Desktop/inline-your-runtime/target/debug/compiler)
+   by 0x5B03469: llvm::SelectionDAGISel::runOnMachineFunction(llvm::MachineFunction&) [clone .part.0] (in /home/will/Desktop/inline-your-runtime/target/debug/compiler)
+   by 0x36D3D4F: (anonymous namespace)::X86DAGToDAGISel::runOnMachineFunction(llvm::MachineFunction&) (in /home/will/Desktop/inline-your-runtime/target/debug/compiler)
+   by 0x5E18707: llvm::MachineFunctionPass::runOnFunction(llvm::Function&) [clone .part.0] (in /home/will/Desktop/inline-your-runtime/target/debug/compiler)
+```
+
+This code path doesn't have any `unsafe` blocks, and the module has been verified, so there's likely a bug in Inkwell or LLVM.
+
+## Statically linked compiler
+
+Rust supports static linking, but I haven't looked too deep into it.
+It would be great to have a compiler that is completely self-contained.
+
+## Portable static linking
+
+It would be awesome if the compiler could be distributed with a static libc and a linker, so that it can simply emit binaries that are statically linked without depending on the system libc or C compiler.
