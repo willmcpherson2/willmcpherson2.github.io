@@ -18,7 +18,7 @@ published: false
 # Compiler vs Runtime
 
 In programming language implementation, we often separate the **compiler** from the **runtime**.
-This is useful when generating code that isn't affected by the input program.
+This is useful when generating code that remains constant.
 
 For example, arithmetic and conditionals require generating very specific instructions, whereas a built-in data structure should be defined in the runtime system.
 The compiler can then generate instructions to call into the runtime API.
@@ -35,7 +35,7 @@ The most straightforward solution is to implement the programming language as an
 The compiler generates a binary which is then linked against the runtime library.
 
 This is a fine solution, and I actually recommend it over some of the hacks that I'll be describing in this post.
-However it's worth understanding some of the downsides of linking your runtime.
+However, it's worth understanding some of the downsides of linking your runtime.
 
 By separately compiling the executable and the runtime, we miss out on a lot of the optimisations available in LLVM.
 While the executable and the runtime can be optimised separately, information is lost in the boundary.
@@ -52,7 +52,7 @@ But basically, instead of linking object files, you tell the compiler (e.g. Clan
 This enables whole-program optimisation.
 
 But how do we do that with the generated code and the runtime?
-Well we could compile our runtime to LLVM bitcode ahead of time, generate our code as LLVM bitcode and then link them.
+Well, we could compile our runtime to LLVM bitcode ahead of time, generate our code as LLVM bitcode and then link them.
 For example if `rts.bc` is our runtime library and `output.bc` is our generated code:
 
 ```
@@ -361,6 +361,9 @@ $ llvm-nm target/rts.bc
 Perfect - the only undefined symbols are the C functions we're calling.
 Note that this is for the `release` profile and the `dev` profile will create a much larger module.
 
+If you want to simplify this setup, it seems that if you write C-like code (i.e. only using the `libc` crate and manually managing memory), then the `--emit=llvm-bc` flag will pretty much give you a standalone LLVM module.
+As soon as you import `Box` however, things start to get complicated.
+
 ## Compiler
 
 Finally we can write our compiler.
@@ -482,7 +485,21 @@ $ ldd main
         not a dynamic executable
 ```
 
-# Exercises
+# Conclusion
+
+- We've achieved a clear separation of concerns between our compiler and runtime.
+- The runtime is safe, ergonomic, correct, efficient, testable and small.
+- The runtime can be directly embedded into the compiler for maximum portability.
+- The compiler can generate code that can easily call into the runtime API.
+- The runtime code occupies the same module as the generated code, and we run optimisations on the whole program - allowing LLVM to inline our runtime functions.
+
+However:
+
+- This relies on `RUSTFLAGS="--emit=llvm-bc"`, which is a pretty creative [workflow](https://xkcd.com/1172/).
+- We have to be very selective with our Rust version because we need to generate code that uses the same LLVM version. This really limits our flexibility.
+- We have to be careful about what code we generate and what our runtime API looks like. Of course, code generation is always dangerous, but Rust brings with it a lot of extra rules (e.g. [aliasing](https://doc.rust-lang.org/nomicon/aliasing.html))
+
+# Homework
 
 ## Build the runtime on `std`
 
