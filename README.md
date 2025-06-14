@@ -1,6 +1,6 @@
 # [willmcpherson2.com](https://willmcpherson2.com/)
 
-My personal blog.
+Will McPherson's personal blog
 
 ```sh
 nix develop

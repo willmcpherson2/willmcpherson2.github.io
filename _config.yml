@@ -1,8 +1,21 @@
 title: willmcpherson2
+author: Will McPherson
+twitter:
+  username: willmcp2
+social:
+  name: Will McPherson
+  links:
+    - https://x.com/willmcp2
+    - https://github.com/willmcpherson2/
+    - https://www.linkedin.com/in/willmcpherson2/
+    - https://www.youtube.com/@willmcpherson2
+    - https://soundcloud.com/cereal7
+    - https://cereal7.bandcamp.com
 
 markdown: kramdown
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
 
 remote_theme: "jekyll/minima@6603f78"
 minima:
