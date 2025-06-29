@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Metasyntax"
-published: false
+published: true
 ---
 
 * toc
@@ -112,10 +112,14 @@ This syntax is well-suited for expression-oriented functional programming langua
 I really like this metasyntax, but it does have some quirks.
 
 First of all, it really needs operator precedence, otherwise it's unwieldy.
-And if we get a user-generated operator `x >>= y`, we need a precedence declaration to figure out how to parse it.
+And if we get a user-defined operator `x >>= y`, we need a precedence declaration to figure out how to parse it.
 But we need to parse the program to get the precedence declaration...
 This is a bit of a chicken-and-egg problem.
 
 Also, top-level expressions are a bit awkward.
 In my example I used a full-stop operator, similar to [Coq](https://learnxinyminutes.com/coq).
 But unlike Coq, it's a separator and not a terminator, so the last expression can't actually end in anything.
+
+## et al.?
+
+What other metasyntaxes are out there?
