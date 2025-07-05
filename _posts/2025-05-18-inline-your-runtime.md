@@ -9,7 +9,7 @@ published: true
 
 ---
 
-| [github.com/willmcpherson2/inline-your-runtime](https://github.com/willmcpherson2/inline-your-runtime)
+| 💾 [github.com/willmcpherson2/inline-your-runtime](https://github.com/willmcpherson2/inline-your-runtime)
 
 > Inlining is the mother of all optimisations
 

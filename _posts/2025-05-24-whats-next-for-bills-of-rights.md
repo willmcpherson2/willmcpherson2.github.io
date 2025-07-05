@@ -23,8 +23,7 @@ This ranges from basic things like the right to a lawyer, to more bold steps suc
 
 In this post I'll try to predict what clauses we might see in bills of rights in the coming centuries.
 
-**I am not a lawyer or political expert.**
-This article is simply a review of social trends and a guess at what might get written down in the next few major bills.
+| ⚠️ **I am not a lawyer or political expert.** This article is simply a review of social trends and a guess at what might get written down in the next few major bills.
 
 # Subjects of the law
 

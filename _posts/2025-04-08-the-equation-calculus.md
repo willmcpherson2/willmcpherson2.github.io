@@ -9,7 +9,7 @@ published: false
 
 ---
 
-| [github.com/willmcpherson2/equation](https://github.com/willmcpherson2/equation)
+| 💾 [github.com/willmcpherson2/equation](https://github.com/willmcpherson2/equation)
 
 I love programming language design.
 And a programming language is really just a bunch of extensions and syntactic sugar on top of a *core language*.

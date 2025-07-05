@@ -13,8 +13,7 @@ In this post I will look at some *metasyntaxes*.
 These are general-purpose syntaxes that don't have inherent semantics.
 Because a metasyntax describes a generic data structure instead of an AST, they are very easy to extend within the language through macros.
 
-Note: ["metasyntax"](https://en.wikipedia.org/wiki/Metasyntax) actually means _a syntax that can be used to describe other syntaxes_.
-I'm reusing that name for a different concept.
+| ℹ️ ["Metasyntax"](https://en.wikipedia.org/wiki/Metasyntax) actually means _a syntax that can be used to describe other syntaxes_. I'm reusing that name for a different concept.
 
 # Syntax
 
