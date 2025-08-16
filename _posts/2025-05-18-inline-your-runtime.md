@@ -45,7 +45,7 @@ Micro-optimisations actually matter here - a 1% improvement is a 1% improvement 
 
 # Inline Your Runtime
 
-Basically we want something [Link Time Optimisation](https://llvm.org/docs/LinkTimeOptimization.html) (LTO), which can optimise across module boundaries.
+Basically we want something like [Link Time Optimisation](https://llvm.org/docs/LinkTimeOptimization.html) (LTO), which can optimise across module boundaries.
 
 LTO is a bit confusing and I don't understand it.
 But basically, instead of linking object files, you tell the compiler (e.g. Clang) to emit something it can actually optimise (e.g. LLVM bitcode).
