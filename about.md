@@ -25,6 +25,8 @@ I'm interested in:
 - Linguistics
 - History
 - Culture
+- Politics
+- Economics
 - English
 - Norwegian
 - Television
