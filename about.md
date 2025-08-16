@@ -24,8 +24,10 @@ I'm interested in:
 - Physics
 - Linguistics
 - History
+- Religion
 - Culture
 - Politics
+- Effective altruism
 - Economics
 - English
 - Norwegian
