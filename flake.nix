@@ -2,7 +2,7 @@
   description = "GitHub pages environment";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
   };
 
   outputs =
@@ -14,8 +14,7 @@
     {
       devShells.${system}.default = pkgs.mkShell {
         buildInputs = with pkgs; [
-          ruby_3_4
-          rubyPackages_3_4.jekyll
+          ruby
           gnumake
         ];
       };
