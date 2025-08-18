@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The height of the American empire was Whitney Houston's performance at the 1991 Super Bowl"
-published: false
+published: true
 ---
 
 It's the 27th of January, 1991.
@@ -22,7 +22,7 @@ The United States enjoys the strongest military in the world, the largest econom
 
 Those same F-16s have just established air superiority over Iraq.
 
-> ...and will be performed by The Florida Orchestra under the direction of maestro Jahja Ling and sung by Grammy Award winner Whitney Houston.
+> ...and will be performed by The Florida Orchestra under the direction of Maestro Jahja Ling and sung by Grammy Award winner Whitney Houston.
 
 The performance is being broadcast to 750 million people around the world.
 And for the first time, in Russia.
