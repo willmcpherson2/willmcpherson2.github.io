@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Do not make AI"
-published: true
 ---
 
 We are currently in an arms race to create an artificial superintelligence.

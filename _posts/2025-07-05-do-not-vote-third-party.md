@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Do not vote third-party"
-published: true
 ---
 
 | ℹ️️️ This is a comment on US politics. I live in Australia.

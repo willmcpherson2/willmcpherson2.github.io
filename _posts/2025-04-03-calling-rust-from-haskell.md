@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Calling Rust from Haskell"
 ---
 

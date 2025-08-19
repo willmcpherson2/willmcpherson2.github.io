@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "The Seeds of Association: How Capitalism Will Destroy Itself"
 published: false
 ---

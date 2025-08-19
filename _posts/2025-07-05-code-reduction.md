@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Code Reduction"
 published: false
 ---

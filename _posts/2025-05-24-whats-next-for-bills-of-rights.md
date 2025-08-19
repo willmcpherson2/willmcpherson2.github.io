@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "What's next for bills of rights?"
 published: false
 ---

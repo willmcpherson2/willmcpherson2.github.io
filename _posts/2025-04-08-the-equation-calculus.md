@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "The Equation Calculus"
 published: false
 ---

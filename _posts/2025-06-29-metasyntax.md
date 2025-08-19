@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Metasyntax"
-published: true
 ---
 
 * toc

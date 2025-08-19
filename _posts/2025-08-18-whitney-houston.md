@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "The height of the American empire was Whitney Houston's performance at the 1991 Super Bowl"
-published: true
 ---
 
 It's the 27th of January, 1991.

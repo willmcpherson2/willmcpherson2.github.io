@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Curry-Howard Denialism"
 ---
 

@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Inline Your Runtime"
-published: true
 ---
 
 * toc
