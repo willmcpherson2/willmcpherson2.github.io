@@ -114,6 +114,12 @@ I haven't done any testing, but I would note that since we're mostly doing shall
 
 If JavaScript was pure from the start, engines and compilers would be able to take advantage of this. Unfortunately, in languages that allow mutation, you don't get any of the performance benefits when you opt out.
 
+---
+
+<a href="https://willmcpherson2.substack.com/p/immutable-javascript"><img src="/assets/images/comment.png" alt="Comment icon" title="Comment" width="32" /></a>
+
+---
+
 # Footnotes
 
 [^1]: There are a few ways to copy JavaScript objects:

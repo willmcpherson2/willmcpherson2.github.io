@@ -269,6 +269,12 @@ This hopefully makes it more clear how constructors and case expressions are fun
 
 To me, this is what "functional programming" means – programming with functions, even if they are hidden behind syntactic sugar.
 
+---
+
+<a href="https://willmcpherson2.substack.com/p/haskell-is-simple/comments"><img src="/assets/images/comment.png" alt="Comment icon" title="Comment" width="32" /></a>
+
+---
+
 # Footnotes
 
 [^1]: This is the least practical of the examples, due to both performance issues and syntactic load. This is more for demonstrational purposes. However, I believe with the right metaprogramming features and compiler optimisations, it could be possible to implement ergonomic and efficient integers as a library. Agda achieves this somewhat with [pragmas](https://agda.readthedocs.io/en/latest/language/built-ins.html#natural-numbers).
