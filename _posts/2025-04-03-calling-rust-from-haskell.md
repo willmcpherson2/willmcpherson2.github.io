@@ -160,7 +160,7 @@ This isn't a Haskell file - it's a `.chs` file, which c2hs will use to generate 
 We're including the C header file that we generated with cbindgen and defining some bindings to it.
 In this case, I'm not defining the fields of the `Point` struct - I'm just defining an opaque pointer.
 
-I find this pattern very useful: you marshall an opaque pointer to an object which has some state in it, and you call functions with it.
+I find this pattern very useful: you marshal an opaque pointer to an object which has some state in it, and you call functions with it.
 This is basically OOP encapsulation - define an object and only access it through methods, because the insides are too hairy to work with directly.
 This design makes your FFI layer thin, which means less can go wrong.
 
