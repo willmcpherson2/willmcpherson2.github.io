@@ -116,7 +116,7 @@ If JavaScript was pure from the start, engines and compilers would be able to ta
 
 ---
 
-<a href="https://willmcpherson2.substack.com/p/immutable-javascript"><img src="/assets/images/comment.png" alt="Comment icon" title="Comment" width="32" /></a>
+<a href="https://willmcpherson2.substack.com/p/immutable-javascript/comments"><img src="/assets/images/comment.png" alt="Comment icon" title="Comment" width="32" /></a>
 
 ---
 
