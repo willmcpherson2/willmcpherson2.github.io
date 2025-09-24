@@ -2,6 +2,11 @@
 title: "Wokeness in Retrospect"
 ---
 
+* toc
+{:toc}
+
+---
+
 In [*The Origins of Wokeness*](https://paulgraham.com/woke.html), Paul Graham outlines the rise and fall of the second wave of political correctness.
 He reports that the first wave took place throughout the 90s, and the second wave throughout the 2010s.
 I wasn't around for the first wave, but I was for the second.
