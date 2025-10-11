@@ -94,3 +94,5 @@ We take a program, look at its parts, and find ways to reduce it down to simpler
 ## Functional programming
 
 ## Types
+
+{% include links.html %}

@@ -16,3 +16,5 @@ Some people have no money, freedom or power, whereas others have an abundance.
 
 First, we can disregard the [nirvana fallacy](https://en.wikipedia.org/wiki/Nirvana_fallacy) that everything is permitted.
 The impossibility of perfectly ethical behaviour has no bearing on our efforts to improve material conditions.
+
+{% include links.html %}

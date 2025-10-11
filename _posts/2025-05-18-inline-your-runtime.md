@@ -544,3 +544,5 @@ It would be great to have a compiler that is completely self-contained.
 ## Portable static linking
 
 It would be awesome if the compiler could be distributed with a static libc and a linker, so that it can simply emit binaries that are statically linked without depending on the system libc or C compiler.
+
+{% include links.html %}

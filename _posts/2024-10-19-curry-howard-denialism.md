@@ -55,3 +55,5 @@ Today's software abstractions will be considered low-level. Programming librarie
 The performance characteristics of software will also change dramatically. Types have a direct impact on run-time behaviour, and this impact will continue to grow as compilers become more sophisticated.
 
 We have entered a period of *Curry-Howard denialism* in the software industry. Even though it has been shown that the application of type theory is a necessity, many will continue to insist on inferior, but more familiar systems.
+
+{% include links.html %}

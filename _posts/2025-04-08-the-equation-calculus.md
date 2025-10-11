@@ -96,3 +96,5 @@ In the equation calculus, you often have to define a separate function and expli
 main x = f (const x)
 const x y = x
 ```
+
+{% include links.html %}

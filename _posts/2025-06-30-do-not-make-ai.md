@@ -11,3 +11,5 @@ AI alignment is not even close to being solved.
 We don't even know if it's solvable.
 
 **Pause AI development immediately.**
+
+{% include links.html %}

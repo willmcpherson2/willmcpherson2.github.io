@@ -38,3 +38,5 @@ With a growing wealth divide, military overextension and protracted culture wars
 It graduated from world police to global pariah.
 
 Rest in peace.
+
+{% include links.html %}

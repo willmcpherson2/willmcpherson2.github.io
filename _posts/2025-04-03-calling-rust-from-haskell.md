@@ -193,3 +193,5 @@ point length: 2.5
 Awesome.
 
 This setup is available as a [template on GitHub](https://github.com/willmcpherson2/hsrs). It includes a Nix flake to install everything you need to develop a Haskell + Rust project, including language servers and formatters.
+
+{% include links.html %}

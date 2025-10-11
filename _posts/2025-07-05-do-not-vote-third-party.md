@@ -67,3 +67,5 @@ Therefore your strategy should actually be to **vote for the two-party candidate
 <div align="center"><img src="/assets/images/australian-house.svg" width="400" /></div>
 <br>
 <div align="center">Australian House of Representatives, with 13 crossbenchers</div>
+
+{% include links.html %}

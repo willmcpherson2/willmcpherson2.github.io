@@ -37,3 +37,5 @@ In this post I'll try to predict what clauses we might see in bills of rights in
 ## Remix Culture
 
 ## The Algorithm: self-censorship
+
+{% include links.html %}

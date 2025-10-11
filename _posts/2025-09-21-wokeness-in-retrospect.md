@@ -80,3 +80,5 @@ Purity testing will be thrown out once external threats become sufficiently obvi
 
 <br>
 <div align="center"><img src="/assets/images/bernie-blm.jpg" /></div>
+
+{% include links.html %}

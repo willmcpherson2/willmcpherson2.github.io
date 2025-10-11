@@ -269,11 +269,7 @@ This hopefully makes it more clear how constructors and case expressions are fun
 
 To me, this is what "functional programming" means – programming with functions, even if they are hidden behind syntactic sugar.
 
----
-
-<a href="https://willmcpherson2.substack.com/p/haskell-is-simple/comments"><img src="/assets/images/comment.png" alt="Comment icon" title="Comment" width="32" /></a>
-
----
+{% include links.html %}
 
 # Footnotes
 

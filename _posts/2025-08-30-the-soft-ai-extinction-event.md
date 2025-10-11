@@ -89,3 +89,5 @@ It didn't really take much - just some basic manipulation and increased economic
 From this point, AI is in charge and is free to discard humanity.
 What's interesting is that the actual extinction event itself will be much slower than what a superintelligence would do.
 This might look more like a traditional genocide that humans would carry out on each other.
+
+{% include links.html %}
