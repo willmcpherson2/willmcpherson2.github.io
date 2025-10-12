@@ -44,6 +44,6 @@ They don't even tell us what algorithms they're using.
 {% capture caption %}
 *The fallacy is that it is up to the steamroller. It is up to the object whether it will be flattened or not.*
 {% endcapture %}
-{% include image.html file="robert-california-2.jpg" caption=caption %}
+{% include image.html file="robert-california-2.jpg" caption %}
 
 {% include links.html %}
