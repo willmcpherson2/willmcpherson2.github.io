@@ -59,11 +59,11 @@ Therefore your strategy should actually be to **vote for the two-party candidate
 {% capture caption %}
 US House of Representatives, with 0 third-party representation
 {% endcapture %}
-{% include image.html file="us-house.svg" alt="US House of Representatives diagram" caption %}
+{% include image.html file="us-house.svg" alt="US House of Representatives diagram" caption=caption %}
 
 {% capture caption %}
 Australian House of Representatives, with 13 crossbenchers
 {% endcapture %}
-{% include image.html file="australian-house.svg" alt="Australian House of Representatives diagram" caption %}
+{% include image.html file="australian-house.svg" alt="Australian House of Representatives diagram" caption=caption %}
 
 {% include links.html %}
