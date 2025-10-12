@@ -18,10 +18,10 @@ But it wasn't clear exactly how our information environment would change.
 
 Silicon Valley is like the coal industry.
 In order to turn a profit, they must manufacture engagement, which creates waste products.
-An atmosphere of outrage results in an increased political temperature and extreme social events.
+An atmosphere of outrage increases the political temperature and causes extreme social events.
 
 If you were addicted to Twitter on the 10th of September 2025, you were probably irradiated by the nuclear fallout of Charlie Kirk's assassination.
-*For you* pages were almost entirely filled with content related to the event.
+*For You* pages were almost entirely filled with content related to the event.
 The most inflammatory discourse floated to the top of the pile.
 Many users were exposed to footage of the brutal killing through Twitter's autoplay feature.
 The site was flooded with speculation, misinformation, AI "enhanced" images, violent discourse, political extremism, doxxing and cancellations.
@@ -41,9 +41,13 @@ There is no freedom of speech on a server owned by someone else.
 We don't get to vote on the terms on the service.
 They don't even tell us what algorithms they're using.
 
+{% include image.html file="big-tech.jpg" alt="Mark Zuckerberg, Jeff Bezos, Sundar Pichai and Elon Musk attending the second inauguration of Donald Trump" width="800" %}
+
+We celebrated the death of the legacy media but we are now standing idly by while the new media is consolidated in the hands of a small group of unelected billionaires.
+
 {% capture caption %}
 *The fallacy is that it is up to the steamroller. It is up to the object whether it will be flattened or not.*
 {% endcapture %}
-{% include image.html file="robert-california-2.jpg" caption %}
+{% include image.html file="robert-california-2.jpg" caption=caption %}
 
 {% include links.html %}
