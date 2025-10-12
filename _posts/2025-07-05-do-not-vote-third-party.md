@@ -56,16 +56,14 @@ But even if you just wanted to win elections, a ranked-choice vote is the only r
 In fact, passing RCV legislation is probably more likely than electing a third-party.
 Therefore your strategy should actually be to **vote for the two-party candidate more likely to introduce RCV!**
 
-<br>
-<div align="center"><img src="/assets/images/us-house.svg" width="400" /></div>
-<br>
-<div align="center">US House of Representatives, with 0 third-party representation</div>
+{% capture caption %}
+US House of Representatives, with 0 third-party representation
+{% endcapture %}
+{% include image.html file="us-house.svg" alt="US House of Representatives diagram" caption=caption %}
 
-<br>
-
-<br>
-<div align="center"><img src="/assets/images/australian-house.svg" width="400" /></div>
-<br>
-<div align="center">Australian House of Representatives, with 13 crossbenchers</div>
+{% capture caption %}
+Australian House of Representatives, with 13 crossbenchers
+{% endcapture %}
+{% include image.html file="australian-house.svg" alt="Australian House of Representatives diagram" caption=caption %}
 
 {% include links.html %}

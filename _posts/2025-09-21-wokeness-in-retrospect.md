@@ -78,7 +78,6 @@ It's an open secret that the left [eats itself](https://www.tiktok.com/@wtf_is.l
 and would rather [critique power](https://youtu.be/aPhrTOg1RUk?si=ogr03n5tcCdmNt2s&t=5245) than actually have any.
 Purity testing will be thrown out once external threats become sufficiently obvious.
 
-<br>
-<div align="center"><img src="/assets/images/bernie-blm.jpg" /></div>
+{% include image.html file="bernie-blm.jpg" alt="Black Lives Matter activists disrupting Bernie Sanders speech" width="800" %}
 
 {% include links.html %}
