@@ -78,3 +78,5 @@ We will have to form new alliances.
 Every parliament will have to struggle against populist movements.
 
 Don't give up.
+
+{% include links.html %}
